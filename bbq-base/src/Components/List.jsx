@@ -19,7 +19,9 @@ export default function List(props) {
         {recipes.map((recipe) => {
           return (
             <Card key={recipe.id}>
-              <Card.Img variant="top" src={recipe.photo_url} />
+              <Link to={`/recipes/${recipe.id}`} key={recipe.id}>
+                <Card.Img variant="top" src={recipe.photo_url} />
+              </Link>
               <Card.Body>
                 <Card.Title>
                   {recipe.name} {recipe.meat_type} {recipe.meat_cut}
