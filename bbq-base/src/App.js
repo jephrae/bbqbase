@@ -2,6 +2,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import List from "./Components/List";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import RecipeDeets from "./Components/RecipeDeets";
 
 function App() {
   return (
@@ -9,9 +11,13 @@ function App() {
       <Header />
       <main>
         <Switch>
-          <Route path="/" component={List} />
+          {/* <Route path="/recipes/new" render={() => <New />} /> */}
+          <Route path="/recipes/:id" render={() => <RecipeDeets />} />
+          <Route path="/recipes" render={() => <List />} />
+          <Route path="/" render={() => <Redirect to="/recipes" />} />
         </Switch>
       </main>
+      <Footer />
     </div>
   );
 }
