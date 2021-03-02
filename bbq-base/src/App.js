@@ -12,7 +12,8 @@ function App() {
       <main>
         <Switch>
           {/* <Route path="/recipes/new" render={() => <New />} /> */}
-          <Route path="/recipes/:id" render={() => <RecipeDeets />} />
+          {/* <Route path="/recipes/:id" render={() => <RecipeDeets />} /> */}
+          <Route path="/recipes/:id" component={RecipeDeets} />
           <Route path="/recipes" render={() => <List />} />
           <Route path="/" render={() => <Redirect to="/recipes" />} />
         </Switch>

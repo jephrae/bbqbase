@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import List from "./List";
 
 export default function RecipeDeets(props) {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    fetch(`https://bbqbaseback.herokuapp.com/recipes/${props.match.params.id}`)
+    fetch(
+      `https://bbqbaseback.herokuapp.com/recipes/${props.match.params.id}?format=json`
+    )
       .then((res) => res.json())
       .then((res) => setRecipe(res))
       .catch(console.error);
