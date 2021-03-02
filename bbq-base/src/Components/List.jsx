@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function List(props) {
+export default function List() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {

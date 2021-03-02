@@ -41,14 +41,8 @@ export default function New() {
 
       <Form.Group>
         <Form.Label>Select Meat Type:</Form.Label>
-        {/* <Form.Control
-          class="select"
-          name="type"
-          value={recipe.meat_type}
-          onChange={handleChange}
-        /> */}
         <select
-          class="form-control"
+          className="form-control"
           value={recipe.meat_type}
           onChange={handleChange}
           name="type"
