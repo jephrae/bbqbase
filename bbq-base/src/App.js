@@ -4,6 +4,7 @@ import List from "./Components/List";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import RecipeDeets from "./Components/RecipeDeets";
+import New from "./Components/New";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Header />
       <main>
         <Switch>
-          {/* <Route path="/recipes/new" render={() => <New />} /> */}
+          <Route path="/recipes/new" render={() => <New />} />
           {/* <Route path="/recipes/:id" render={() => <RecipeDeets />} /> */}
           <Route path="/recipes/:id" component={RecipeDeets} />
           <Route path="/recipes" render={() => <List />} />
