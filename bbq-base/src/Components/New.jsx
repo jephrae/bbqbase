@@ -123,7 +123,7 @@ export default function New() {
         <Form.Control
           as="textarea"
           placeholder="Recipe Instrucitons:"
-          name="desc"
+          name="instructions"
           value={recipe.instructions}
           onChange={handleChange}
         />
