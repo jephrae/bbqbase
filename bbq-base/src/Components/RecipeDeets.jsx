@@ -18,7 +18,6 @@ export default function RecipeDeets(props) {
 
   return (
     <div className="details-container">
-      <h2>detail test</h2>
       <img src={recipe.photo_url} alt={recipe.name} />
       <div className="details">
         <h2>{recipe.name}</h2>
