@@ -1,4 +1,4 @@
-import InputGroup from "react-bootstrap/InputGroup";
+// import InputGroup from "react-bootstrap/InputGroup";
 // import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
@@ -12,7 +12,7 @@ export default function Headers() {
     <header>
       <h1 className="title">
         <Link to={"/recipes"}>
-          <img src={Logo}></img>
+          <img src={Logo} alt="THE BBQ BASE LOGO"></img>
         </Link>
         {"\n"}
       </h1>
