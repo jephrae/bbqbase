@@ -14,7 +14,6 @@ export default function List() {
 
   return (
     <div>
-      <h1>list test</h1>
       <div className="recipes-container">
         {recipes.map((recipe) => {
           return (
