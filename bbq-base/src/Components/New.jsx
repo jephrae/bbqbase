@@ -2,121 +2,30 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 
 export default function New() {
-  const initialInfo = {
-    name: "",
-    meat_type: "",
-    meat_cut: "",
-    cooktime: "",
-    temp: "",
-    credit: "",
-    photo_url: "",
-    desc: "",
-    instructions: "",
-  };
-
-  const [recipe, setRecipe] = useState(initialInfo);
-  console.log("This is working");
-
-  const clicked = () => {
-    console.log("clicked");
-  };
-  const handleSubmit = (e) => {
-    clicked();
-    e.preventDefault();
-    sendDetailsToServer();
-    setRecipe(initialInfo);
-  };
-
-  console.log(recipe);
-  const sendDetailsToServer = () => {
-    console.log("Starting process...");
-
-    if (
-      recipe.name.length &&
-      recipe.meat_type.length &&
-      recipe.meat_cut.length &&
-      recipe.desc.length
-    ) {
-      console.log("Connecting to url");
-      axios.post("https://bbqbaseback.herokuapp.com/recipes/", recipe).then(
-        (res) => {
-          console.log(res);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    }
-  };
+  const [recipe, setRecipe] = useState({});
+  const history = useHistory();
 
   const handleChange = (event) => {
-    const { id, value } = event.target;
-    event.preventDefault();
-    setRecipe((prestate) => ({
-      ...prestate,
-      [id]: value,
-    }));
+    setRecipe({ ...recipe, [event.target.name]: event.target.value });
   };
 
-  // const [recipe, setRecipe] = useState({});
-  // const history = useHistory();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  // const handleChange = (event) => {
-  //   const { id, value } = event.target;
-  //   setRecipe((prestate) => ({
-  //     ...prestate,
-  //     [id]: value,
-  //   }));
-  // };
+    console.log(recipe);
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(recipe),
+    };
 
-  //   // console.log(recipe);
-  //   addNewRecipe();
-  //   // const options = {
-  //   //   method: "POST",
-  //   //   headers: { "Content-Type": "application/json" },
-  //   //   body: JSON.stringify(recipe),
-  //   // };
-  //   // let response = await fetch("https://bbqbaseback.herokuapp.com/recipes", {
-  //   //   method: "POST",
-  //   //   headers: { "Content-Type": "application/json" },
-  //   //   body: JSON.stringify(),
-  //   // });
-  //   // let resjson = await response.json();
-  //   // console.log(resjson);
-  //   // // fetch("https://bbqbaseback.herokuapp.com/recipes", options)
-  //   // //   .then(history.push("/recipes"))
-  //   // //   .catch(console.error);
-
-  //   // setRecipe({ ...recipe, resjson });
-  // };
-  // const addNewRecipe = async (recipe) => {
-  //   let recipeResponse = await fetch(
-  //     "https://bbqbaseback.herokuapp.com/recipes",
-  //     {
-  //       credentials: "include",
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(recipe),
-  //     }
-  //   );
-  //   let resjson = await recipeResponse.json();
-  //   // console.log(resjson);
-  //   // console.log(resjson.status);
-  //   console.log(recipeResponse);
-  //   console.log(resjson);
-  //   console.log(recipe);
-  //   // fetch("https://bbqbaseback.herokuapp.com/recipes", options)
-  //   //   .then(history.push("/recipes"))
-  //   //   .catch(console.error);
-
-  //   setRecipe({ ...recipe });
-  // };
+    fetch("https://bbqbaseback.herokuapp.com/recipes/", options)
+      .then(history.push("/recipes"))
+      .catch(console.error);
+  };
 
   return (
     <Form onSubmit={handleSubmit}>
