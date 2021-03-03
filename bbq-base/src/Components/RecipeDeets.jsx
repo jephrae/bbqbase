@@ -20,7 +20,9 @@ export default function RecipeDeets(props) {
     <div className="details-container">
       <img src={recipe.photo_url} alt={recipe.name} />
       <div className="details">
-        <h1>{recipe.name}</h1>
+        <div className="details-title">
+          <h1>{recipe.name}</h1>
+        </div>
         <h4>by: {recipe.credit}</h4>
         <br />
         <h3>{recipe.desc}</h3>
@@ -31,7 +33,9 @@ export default function RecipeDeets(props) {
           </b>
         </p>
         <hr />
-        <p>{recipe.instructions}</p>
+        <div className="detail-instructions">
+          <p>{recipe.instructions}</p>
+        </div>
       </div>
     </div>
   );

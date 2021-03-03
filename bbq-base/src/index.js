@@ -5,6 +5,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./fonts/RobotoSlab-VariableFont_wght.ttf";
+import "./fonts/PlayfairDisplay-VariableFont_wght.ttf";
 
 ReactDOM.render(
   <Router>
