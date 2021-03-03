@@ -14,6 +14,11 @@ export default function List() {
 
   return (
     <div>
+      <div className="howto">
+        {" "}
+        <p>Just click a recipie to learn more! Feel free to submit your own!</p>
+        <hr />
+      </div>
       <div className="recipes-container">
         {recipes.map((recipe) => {
           return (

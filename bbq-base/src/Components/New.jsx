@@ -30,7 +30,13 @@ export default function New() {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group>
-        <Form.Label>Recipe Name</Form.Label>
+        <Form.Label>
+          {" "}
+          All fields are required! Mess something up? Contact the
+          <a href="mailto:jeff@netrock.net"> mods!</a> <br />
+          <hr />
+          Recipe Name
+        </Form.Label>
         <Form.Control
           placeholder="Enter the recipe's name"
           name="name"

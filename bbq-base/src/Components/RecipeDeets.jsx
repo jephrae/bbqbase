@@ -20,13 +20,17 @@ export default function RecipeDeets(props) {
     <div className="details-container">
       <img src={recipe.photo_url} alt={recipe.name} />
       <div className="details">
-        <h2>{recipe.name}</h2>
+        <h1>{recipe.name}</h1>
         <h4>by: {recipe.credit}</h4>
         <br />
         <h3>{recipe.desc}</h3>
         <p>
-          <b>uses: {recipe.meat_cut}</b>
+          <b>
+            {" "}
+            uses: {recipe.meat_cut} | cooktime: {recipe.cooktime}
+          </b>
         </p>
+        <hr />
         <p>{recipe.instructions}</p>
       </div>
     </div>
