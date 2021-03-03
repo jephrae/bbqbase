@@ -3,41 +3,57 @@ header {
   background-color: var(--dark);
   display: flex;
   align-items: center;
+  width: auto;
 }
 
-header .title,
-header .search {
+/* header .title {
   margin: 1rem 2rem;
-}
+} */
 
 .App {
   background-color: lightgray;
+  width: auto;
+  /* margin: 2px; */
+  /* height: auto; */
 }
 
 .recipes-container {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap;
   width: auto;
+  height: auto; */
 }
 .details-container {
-  display: flex;
+  display: grid;
+  /* grid-template-columns: 300px 1fr; */
 }
+.details-container img {
+  width: 300px;
+  justify-content: center;
+  display: grid;
+}
+
 .card {
   color: var(--light);
   background-color: var(--dark);
-  width: 300px;
+  width: 200px;
   margin: 1rem;
   border-color: black;
   border: 2px;
   border-width: 2;
+  height: 420px;
 }
 .card-text {
-  width: 80vh;
+  width: auto;
+  /* height: 100px; */
 }
 .card-title {
   font-size: large;
   font-weight: 700;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
+}
+.card-img {
+  width: 18rem;
 }
 
 .form-group {
@@ -45,5 +61,33 @@ header .search {
 }
 
 img {
-  padding: 6px;
+  padding: 2px;
+}
+.footer {
+  display: flex;
+}
+/* phone portrait */
+@media (max-width: 420px) {
+  .app {
+    width: 370px;
+  }
+  .recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 370px;
+    justify-content: center;
+  }
+  .card {
+    width: 300px;
+    height: auto;
+    /* margin: 2px; */
+  }
+  .details-container {
+    display: grid;
+    /* grid-template-columns: 300px 1fr; */
+  }
+
+  /* .details-container img {
+    width: 300px;
+  } */
 }

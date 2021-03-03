@@ -14,12 +14,10 @@ export default function Headers() {
         <Link to={"/recipes"}>
           <img src={Logo}></img>
         </Link>
+        {"\n"}
       </h1>
+
       <Button onClick={() => history.push("/recipes/new")}>Add Recipe</Button>
-      <InputGroup className="mb-3 search">
-        {/* <FormControl placeholder="Search for Recipes" />
-        <Button>Search!</Button> */}
-      </InputGroup>
     </header>
   );
 }

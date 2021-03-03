@@ -23,9 +23,7 @@ export default function List() {
                 <Card.Img variant="top" src={recipe.photo_url} />
               </Link>
               <Card.Body>
-                <Card.Title>
-                  {recipe.name} {recipe.meat_type} {recipe.meat_cut}
-                </Card.Title>
+                <Card.Title>{recipe.name}</Card.Title>
                 <Card.Text>{recipe.desc}</Card.Text>
               </Card.Body>
             </Card>
