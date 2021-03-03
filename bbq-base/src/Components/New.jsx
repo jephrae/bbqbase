@@ -45,7 +45,7 @@ export default function New() {
           className="form-control"
           value={recipe.meat_type}
           onChange={handleChange}
-          name="type"
+          name="meat_type"
         >
           <option selected>Choose Meat</option>
           <option value="CK">Chicken</option>
@@ -60,7 +60,7 @@ export default function New() {
         <Form.Label>What cut of meat?</Form.Label>
         <Form.Control
           placeholder="Enter the Cut of Meat"
-          name="cut"
+          name="meat_cut"
           value={recipe.meat_cut}
           onChange={handleChange}
         />
